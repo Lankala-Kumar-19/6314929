@@ -1,0 +1,22 @@
+package com.cognizant.EmployeeManagement.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cognizant.EmployeeManagement.Employee;
+import com.cognizant.EmployeeManagement.repository.EmployeeRepository;
+
+import jakarta.transaction.Transactional;
+
+@Service
+public class EmployeeService {
+
+	@Autowired
+	private EmployeeRepository employeeRepository;
+
+	@Transactional
+	public void addEmployee(Employee employee) {
+	    employeeRepository.save(employee);
+	}
+	
+}
